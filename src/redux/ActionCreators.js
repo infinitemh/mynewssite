@@ -1,6 +1,6 @@
 import * as ActionTypes from "./ActionTypes";
 import { createFilteredRequest } from "../shared/filters";
-// this file is ignored in git. create the file and export myAPIKey accodingly.
+// this file is ignored in git. Set your APIKey from https://newsapi.org/
 import { myAPIKey } from "../shared/apikeys";
 
 export const fetchArticles = (country = "us", category = "general") => (
