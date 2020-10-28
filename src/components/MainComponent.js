@@ -62,6 +62,7 @@ function RenderNewsArticle({ article }) {
       <a
         href={article.url}
         target="_blank"
+        // https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/
         rel="noopener noreferrer"
         className="black-text"
       >
@@ -89,6 +90,7 @@ function RenderNewsArticle({ article }) {
 
 class Main extends Component {
   componentDidMount() {
+    // defaults: category="general" country="us"
     this.props.fetchArticles();
   }
 
@@ -96,7 +98,6 @@ class Main extends Component {
     const listOfArticles = this.props.articles.articles.map((article) => (
       <RenderNewsArticle article={article} key={article.url} />
     ));
-    // Loading component while the new articles are being fetched
     if (this.props.articles.isLoading) {
       return (
         <div className="row">

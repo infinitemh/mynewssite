@@ -1,5 +1,5 @@
 import * as ActionTypes from "./ActionTypes";
-import { baseUrl } from "../shared/baseUrl";
+import { createFilteredRequest } from "../shared/filters";
 // this file is ignored in git. create the file and export myAPIKey accodingly.
 import { myAPIKey } from "../shared/apikeys";
 
@@ -7,16 +7,13 @@ export const fetchArticles = (country = "us", category = "general") => (
   dispatch
 ) => {
   dispatch(articlesLoading());
-  const endpoint = "top-headlines";
-  const apiKey = `apiKey=${myAPIKey}`;
-  //   const apiKey = ``;
-  const combinedFilters = `${"country=" + country}${"&category=" + category}${
-    "&" + apiKey
-  }`;
-  const url = `${baseUrl}${endpoint}?${combinedFilters}`;
-  const req = new Request(url);
+  const req = createFilteredRequest(country, category);
 
-  return fetch(req)
+  return fetch(req, {
+    headers: {
+      "X-Api-Key": myAPIKey,
+    },
+  })
     .then(
       (response) => {
         if (response.ok) {

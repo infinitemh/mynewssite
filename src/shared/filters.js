@@ -1,3 +1,5 @@
+import { baseUrl, defaultEndpoint } from "./baseUrl";
+
 export const countryArray = [
   "ae",
   "ar",
@@ -64,3 +66,9 @@ export const categoryArray = [
   "sports",
   "technology",
 ];
+
+export const createFilteredRequest = (country = "us", category = "general") => {
+  const url = `${baseUrl}${defaultEndpoint}?${`country=${country}`}&${`category=${category}`}`;
+  const req = new Request(url);
+  return req;
+};
