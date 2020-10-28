@@ -1,3 +1,6 @@
+### Make sure to include your own API key as `myAPIKey` in shared/apikeys.js - https://newsapi.org/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
