@@ -1,5 +1,12 @@
 import { baseUrl, defaultEndpoint } from "./baseUrl";
 
+// TODO: accomodate "everything" and "sources" endpoints, as well as keyword searches
+export const createFilteredRequest = (country = "us", category = "general") => {
+  const url = `${baseUrl}${defaultEndpoint}?${`country=${country}`}&${`category=${category}`}`;
+  const req = new Request(url);
+  return req;
+};
+
 export const countryArray = [
   "ae",
   "ar",
@@ -66,9 +73,3 @@ export const categoryArray = [
   "sports",
   "technology",
 ];
-
-export const createFilteredRequest = (country = "us", category = "general") => {
-  const url = `${baseUrl}${defaultEndpoint}?${`country=${country}`}&${`category=${category}`}`;
-  const req = new Request(url);
-  return req;
-};

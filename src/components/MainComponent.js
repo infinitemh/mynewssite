@@ -100,23 +100,13 @@ class Main extends Component {
     ));
     if (this.props.articles.isLoading) {
       return (
-        <div className="row">
-          <div className="col-1"></div>
-          <div className="col">
-            <Loading />
-          </div>
-          <div className="col-1"></div>
+        <div className="container">
+          <Loading />
         </div>
       );
     }
     if (this.props.articles.errMess) {
-      return (
-        <div className="row">
-          <div className="col-1"></div>
-          <div className="col">{this.props.articles.errMess}</div>
-          <div className="col-1"></div>
-        </div>
-      );
+      return <div className="container">{this.props.articles.errMess}</div>;
     }
     return (
       <div className="row">

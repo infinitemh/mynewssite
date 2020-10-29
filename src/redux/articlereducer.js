@@ -10,6 +10,7 @@ export const Articles = (
         ...state,
         isLoading: false,
         errMess: null,
+        // spread because payload is in {articles:[]} form
         ...action.payload,
       };
     case ActionTypes.ARTICLES_LOADING:

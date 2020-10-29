@@ -7,6 +7,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const ConfigureStore = () => {
   const store = createStore(
+    // combineReducers is kept so just add in more reducers in the future
     combineReducers({
       articles: Articles,
     }),

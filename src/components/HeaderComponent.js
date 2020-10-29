@@ -13,7 +13,6 @@ class Header extends Component {
     super(props);
     this.state = {
       country: "us",
-      //   empty string defaults to all categories
       category: "general",
     };
     this.handleChange = this.handleChange.bind(this);
